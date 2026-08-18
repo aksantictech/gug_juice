@@ -1,45 +1,35 @@
-# GUG — Commande en ligne
+# GUG Order — V2
 
-Mini-site statique, responsive et prêt pour Vercel.
+Mini-site statique de commande GUG, prêt pour Vercel.
 
-## Tester en local
+## Fonctionnalités
+- Panier dynamique : 1 L, 500 ml et 250 ml.
+- Présentation de la gamme : gingembre & fruits, curcuma, Energy Shots.
+- Commande au minimum 3 jours à l'avance (contrôle automatique de la date).
+- Livraison sans frais supplémentaires dès 20 € vers :
+  - Bruxelles-Midi
+  - Bruxelles-Central
+  - Liedekerke
+  - Station Denderleeuw
+- Autres destinations : frais de transport à confirmer avant validation.
+- Paiement : cash ou virement bancaire.
+- Champ pour préciser les goûts / l'assortiment.
+- Bloc de précautions avec confirmation obligatoire.
+- Envoi final de la commande préremplie vers WhatsApp : 0470 923 114.
 
-### Option simple
-Dans le dossier du projet :
+## Test local
+Ouvrir le dossier dans PowerShell puis lancer :
 
-```bash
 python -m http.server 8080
-```
 
-Puis ouvrir : http://localhost:8080
+Ensuite ouvrir http://localhost:8080
 
-### Avec VS Code
-Utiliser l'extension Live Server sur `index.html`.
-
-## Déployer sur Vercel
-
-1. Créer un dépôt GitHub et y envoyer les fichiers du dossier.
-2. Dans Vercel : **Add New > Project**.
+## Déploiement Vercel
+1. Mettre le dossier sur GitHub.
+2. Dans Vercel : Add New > Project.
 3. Importer le dépôt.
-4. Framework Preset : **Other**.
-5. Build Command : laisser vide.
-6. Output Directory : laisser vide.
-7. Cliquer **Deploy**.
+4. Framework Preset : Other.
+5. Aucune commande de build nécessaire.
+6. Déployer.
 
-Vous pouvez aussi déployer avec Vercel CLI depuis ce dossier.
-
-## À personnaliser
-
-- Numéro WhatsApp : actuellement `+32 470 92 31 14` dans `index.html` et `app.js`.
-- Prix : dans `app.js` (objets PRODUCTS) et dans `index.html` pour l'affichage.
-- Adresse/retrait : texte `Liedekerke`.
-- Photos : dossier `assets/`.
-
-## Fonctionnement
-
-- Sélection de formats 1 L / 500 ml / 250 ml.
-- Calcul automatique du panier.
-- Formulaire livraison ou retrait.
-- Génération d'un numéro de commande.
-- Envoi de la commande préremplie vers WhatsApp.
-- Aucun backend et aucun paiement en ligne dans cette V1.
+Le site est 100 % statique : aucune base de données n'est nécessaire pour cette V2.

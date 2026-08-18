@@ -4,6 +4,13 @@ const PRODUCTS = {
   '250ml': { name: 'GUG 250 ml', price: 2 }
 };
 
+const FREE_DESTINATIONS = new Set([
+  'Bruxelles-Midi',
+  'Bruxelles-Central',
+  'Liedekerke',
+  'Station Denderleeuw'
+]);
+
 const state = { '1l': 0, '500ml': 0, '250ml': 0 };
 const $ = (id) => document.getElementById(id);
 const drawer = $('cartDrawer');
@@ -20,6 +27,57 @@ function totals() {
 }
 
 function money(value){ return `${value.toFixed(0)} €`; }
+
+function deliveryStatus(){
+  const { total } = totals();
+  const modeEl = document.querySelector('input[name="delivery"]:checked');
+  const mode = modeEl ? modeEl.value : 'Livraison';
+  const destination = $('deliveryDestination') ? $('deliveryDestination').value : '';
+
+  if(mode === 'Retrait à Liedekerke'){
+    return {
+      text: 'Retrait à Liedekerke : aucun frais de transport à ajouter.',
+      css: 'success'
+    };
+  }
+
+  if(!destination){
+    return {
+      text: 'Choisissez une destination. Livraison sans frais supplémentaires sur les points indiqués dès 20 € de commande.',
+      css: ''
+    };
+  }
+
+  if(FREE_DESTINATIONS.has(destination) && total >= 20){
+    return {
+      text: `Livraison sans frais supplémentaires à ${destination} : votre commande atteint le minimum de 20 €.`,
+      css: 'success'
+    };
+  }
+
+  if(FREE_DESTINATIONS.has(destination) && total < 20){
+    return {
+      text: `Pour ${destination}, la livraison sans frais supplémentaires est disponible à partir de 20 €. Votre panier est actuellement de ${money(total)} ; les frais éventuels seront communiqués avant confirmation.`,
+      css: 'warning'
+    };
+  }
+
+  return {
+    text: 'Autre destination : des frais de transport sont obligatoires et seront communiqués avant confirmation.',
+    css: 'warning'
+  };
+}
+
+function updateDeliveryNotice(){
+  const status = deliveryStatus();
+  const notice = $('deliveryNotice');
+  const rule = $('deliveryRule');
+  if(notice){
+    notice.textContent = status.text;
+    notice.className = `delivery-notice ${status.css}`.trim();
+  }
+  if(rule) rule.textContent = status.text;
+}
 
 function render(){
   Object.keys(state).forEach(id => { $(`qty-${id}`).textContent = state[id]; });
@@ -39,6 +97,7 @@ function render(){
   cartTotalBlock.hidden = qty === 0;
   orderForm.hidden = qty === 0;
   $('drawerTotal').textContent = money(total);
+  updateDeliveryNotice();
 }
 
 function toast(message){
@@ -56,10 +115,16 @@ document.querySelectorAll('.plus').forEach(b => b.addEventListener('click',()=>c
 document.querySelectorAll('.minus').forEach(b => b.addEventListener('click',()=>change(b.dataset.id,-1)));
 
 function openDrawer(){
-  drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); backdrop.hidden = false; document.body.classList.add('no-scroll');
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  backdrop.hidden = false;
+  document.body.classList.add('no-scroll');
 }
 function closeDrawer(){
-  drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); backdrop.hidden = true; document.body.classList.remove('no-scroll');
+  drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  backdrop.hidden = true;
+  document.body.classList.remove('no-scroll');
 }
 $('cartMini').addEventListener('click',openDrawer);
 floatingCart.addEventListener('click',openDrawer);
@@ -69,28 +134,61 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
 
 function syncDelivery(){
   const mode = document.querySelector('input[name="delivery"]:checked').value;
-  const show = mode === 'Livraison';
-  $('addressFields').style.display = show ? 'block' : 'none';
-  $('address').required = show;
-}
-document.querySelectorAll('input[name="delivery"]').forEach(r=>r.addEventListener('change',syncDelivery));
+  const isDelivery = mode === 'Livraison';
 
-const d = new Date();
-d.setMinutes(d.getMinutes()-d.getTimezoneOffset());
-$('deliveryDate').min = d.toISOString().split('T')[0];
+  $('deliveryFields').style.display = isDelivery ? 'block' : 'none';
+  $('deliveryDestination').required = isDelivery;
+
+  const destination = $('deliveryDestination').value;
+  const needsAddress = isDelivery && destination === 'Autre destination';
+  $('addressFields').hidden = !needsAddress;
+  $('address').required = needsAddress;
+
+  updateDeliveryNotice();
+}
+
+document.querySelectorAll('input[name="delivery"]').forEach(r=>r.addEventListener('change',syncDelivery));
+$('deliveryDestination').addEventListener('change', syncDelivery);
+
+function localISO(date){
+  const copy = new Date(date);
+  copy.setMinutes(copy.getMinutes() - copy.getTimezoneOffset());
+  return copy.toISOString().split('T')[0];
+}
+
+// Toute commande doit être prévue au minimum 3 jours à l'avance.
+const minDate = new Date();
+minDate.setDate(minDate.getDate() + 3);
+$('deliveryDate').min = localISO(minDate);
 
 orderForm.addEventListener('submit',(e)=>{
   e.preventDefault();
   const { qty, total } = totals();
-  if(!qty){ toast('Ajoutez au moins une bouteille.'); return; }
+
+  if(!qty){
+    toast('Ajoutez au moins une bouteille.');
+    return;
+  }
+
   if(!orderForm.reportValidity()) return;
 
+  const selectedDate = $('deliveryDate').value;
+  if(selectedDate && selectedDate < $('deliveryDate').min){
+    toast('Choisissez une date au minimum 3 jours à l’avance.');
+    $('deliveryDate').focus();
+    return;
+  }
+
   const mode = document.querySelector('input[name="delivery"]:checked').value;
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+  const destination = mode === 'Livraison' ? $('deliveryDestination').value : 'Retrait à Liedekerke';
   const orderNo = `GUG-${new Date().getFullYear()}-${Math.floor(1000 + Math.random()*9000)}`;
   const items = Object.entries(state)
     .filter(([,q])=>q>0)
     .map(([id,q])=>`• ${q} × ${PRODUCTS[id].name} = ${money(q*PRODUCTS[id].price)}`)
     .join('\n');
+
+  const status = deliveryStatus();
 
   const parts = [
     `Bonjour GUG, je souhaite confirmer ma commande ${orderNo}.`,
@@ -100,16 +198,27 @@ orderForm.addEventListener('submit',(e)=>{
     `Total produits : ${money(total)}`,
     `Nom : ${$('customerName').value.trim()}`,
     `Téléphone : ${$('customerPhone').value.trim()}`,
-    `Réception : ${mode}`
+    `Réception : ${mode}`,
+    `Destination : ${destination}`,
+    `Paiement : ${payment}`
   ];
 
-  if(mode === 'Livraison'){
+  if(mode === 'Livraison' && destination === 'Autre destination'){
     const addr = [$('address').value.trim(), $('postalCode').value.trim(), $('city').value.trim()].filter(Boolean).join(', ');
-    parts.push(`Adresse : ${addr}`);
+    parts.push(`Adresse / destination exacte : ${addr}`);
   }
-  if($('deliveryDate').value) parts.push(`Date souhaitée : ${$('deliveryDate').value}`);
+
+  parts.push(`Date souhaitée : ${selectedDate}`);
+
+  if($('flavors').value.trim()) parts.push(`Goûts / composition : ${$('flavors').value.trim()}`);
   if($('note').value.trim()) parts.push(`Note : ${$('note').value.trim()}`);
-  parts.push('', 'Merci de me confirmer la disponibilité et, si nécessaire, les frais de livraison.');
+
+  parts.push(
+    `Livraison : ${status.text}`,
+    'Précautions : je confirme qu’aucune des situations particulières indiquées dans le formulaire ne me concerne.',
+    '',
+    'Merci de me confirmer la disponibilité, le montant final et les modalités de livraison/retrait.'
+  );
 
   const url = `https://wa.me/32470923114?text=${encodeURIComponent(parts.join('\n'))}`;
   window.open(url, '_blank', 'noopener');

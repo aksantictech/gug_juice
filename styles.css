@@ -23,3 +23,98 @@ footer{background:#102f1c;color:white;padding-top:56px}.footer-inner{display:gri
 .drawer-backdrop{position:fixed;inset:0;background:rgba(9,29,15,.45);backdrop-filter:blur(3px);z-index:60}.drawer-backdrop[hidden]{display:none}.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:min(500px,100%);background:var(--paper);z-index:61;box-shadow:-25px 0 70px rgba(10,38,18,.18);padding:24px;overflow:auto;transform:translateX(103%);transition:transform .28s ease}.cart-drawer.open{transform:translateX(0)}.drawer-head{display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px}.drawer-head h2{font-size:36px;margin:7px 0 0}.close{width:42px;height:42px;border:1px solid var(--line);background:white;border-radius:50%;font-size:27px;color:var(--green)}.cart-items{display:flex;flex-direction:column;gap:8px;padding:16px 0}.cart-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-row small{display:block;color:var(--muted)}.cart-row strong{color:var(--green)}.cart-empty{padding:30px 5px;color:var(--muted);text-align:center}.cart-total{padding:15px 0 22px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:8px}.cart-total strong{font-size:26px}.cart-total small{grid-column:1/-1;color:var(--muted)}form{padding-top:22px}.form-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.form-title span{font-weight:800;font-size:18px}.form-title small{color:var(--muted)}form>label,#addressFields>label,.two-cols label{display:grid;gap:6px;font-size:13px;font-weight:700;margin-bottom:13px}input,textarea{width:100%;border:1px solid var(--line);background:white;border-radius:12px;padding:13px 14px;outline:none;color:var(--ink)}input:focus,textarea:focus{border-color:#7daa84;box-shadow:0 0 0 3px rgba(80,139,92,.1)}fieldset{border:0;padding:0;margin:0 0 14px}legend{font-size:13px;font-weight:700;margin-bottom:8px}.radio-card{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:10px 12px;margin-bottom:8px;background:white}.radio-card input{width:auto}.radio-card span{display:grid}.radio-card small{color:var(--muted);font-weight:500}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form-note{font-size:11px;color:var(--muted);text-align:center}.toast{position:fixed;z-index:90;left:50%;top:95px;transform:translate(-50%,-15px);background:#132e1d;color:white;padding:11px 15px;border-radius:999px;font-size:13px;font-weight:700;opacity:0;pointer-events:none;transition:.22s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:900px){.topbar nav{display:none}.topbar{padding:0 20px}.hero{grid-template-columns:1fr;padding-top:38px}.hero-copy{text-align:center}.hero-copy>p{margin-inline:auto}.hero-actions,.trust-row{justify-content:center}.hero-visual{min-height:480px}.hero-visual img{height:470px}.product-grid{grid-template-columns:1fr 1fr}.product-card:last-child{grid-column:1/-1}.nature-card{grid-template-columns:1fr}.nature-image{min-height:360px}.steps{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head>p{margin-bottom:0}.section-head h2{margin-bottom:15px}}
 @media(max-width:600px){.section-shell{width:min(100% - 26px,1180px)}.topbar{height:68px}.brand img{width:92px;height:45px}.cart-mini span{display:none}.hero{gap:14px;padding-bottom:42px}.hero h1{font-size:46px}.hero-copy>p{font-size:16px}.hero-actions{flex-direction:column}.hero-visual{min-height:390px}.hero-visual img{height:380px;width:92%;border-radius:28px}.price-pill{left:5px;bottom:2%}.fresh-pill{right:2px;top:12%}.ticker{justify-content:flex-start;white-space:nowrap;overflow:auto}.products{padding:64px 0}.product-grid{grid-template-columns:1fr}.product-card:last-child{grid-column:auto}.product-image{height:280px}.nature{padding-bottom:64px}.nature-copy{padding:32px 22px}.benefit-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.steps span{margin-bottom:15px}.footer-inner{grid-template-columns:1fr;gap:26px}.floating-cart{grid-template-columns:1fr auto}.floating-cart em{display:none}.cart-drawer{padding:20px}.two-cols{grid-template-columns:1fr}.nature-image{min-height:310px}}
+
+
+/* --- GUG V2 : gamme, livraison, paiement et précautions --- */
+.order-alert{
+  margin-top:42px;
+  padding:22px 24px;
+  border:1px solid #ead3a3;
+  border-radius:24px;
+  background:linear-gradient(135deg,#fff8e9,#fffdf8);
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:18px;
+  align-items:center;
+  box-shadow:0 12px 35px rgba(92,68,21,.07)
+}
+.order-alert-icon{
+  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:var(--orange);color:white;font-size:26px;font-weight:900
+}
+.order-alert h2{font-family:Georgia,'Times New Roman',serif;font-size:26px;margin:4px 0}
+.order-alert p{margin:0;color:var(--muted)}
+.range{padding:82px 0 42px}
+.range-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.range-card{
+  min-height:300px;padding:28px;border-radius:28px;border:1px solid var(--line);
+  background:linear-gradient(155deg,#fffdf8,#f1f6eb);position:relative;overflow:hidden
+}
+.range-card:after{
+  content:"";position:absolute;width:140px;height:140px;border-radius:50%;
+  background:rgba(239,141,37,.12);right:-38px;bottom:-42px
+}
+.range-card-dark{background:linear-gradient(145deg,#174d2a,#2d6b3b);color:white;border-color:transparent}
+.range-card-dark p{color:#d8e7da}
+.range-card-shot{background:linear-gradient(145deg,#fff1ce,#fffdf8)}
+.range-number{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:white;color:var(--green);font-weight:900;box-shadow:0 8px 20px rgba(31,68,41,.08)}
+.range-card h3{font-family:Georgia,'Times New Roman',serif;font-size:31px;margin:28px 0 12px}
+.range-card p{color:var(--muted);max-width:330px}
+.range-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:25px}
+.range-tags span{font-size:11px;font-weight:800;border:1px solid rgba(23,77,42,.15);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.7)}
+.range-card-dark .range-tags span{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white}
+
+.logistics{padding:4px 0 90px}
+.logistics-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.logistics-card{
+  border:1px solid var(--line);border-radius:24px;padding:25px;background:white;
+  box-shadow:0 8px 28px rgba(35,69,44,.04)
+}
+.logistics-card.free{background:linear-gradient(145deg,#eef6e9,#fff);border-color:#bfd4b7}
+.logistics-kicker{font-size:11px;letter-spacing:.1em;font-weight:900;color:var(--green-2)}
+.logistics-card h3{font-size:25px;margin:8px 0 12px}
+.logistics-card p,.logistics-card li{color:var(--muted);font-size:14px}
+.logistics-card ul{padding-left:20px;margin-bottom:0}
+
+select{
+  width:100%;border:1px solid var(--line);background:white;border-radius:12px;
+  padding:13px 14px;outline:none;color:var(--ink);font:inherit
+}
+select:focus{border-color:#7daa84;box-shadow:0 0 0 3px rgba(80,139,92,.1)}
+#deliveryFields>label{display:grid;gap:6px;font-size:13px;font-weight:700;margin-bottom:10px}
+.delivery-notice,.advance-notice{
+  padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.45;margin:0 0 14px
+}
+.delivery-notice{background:#edf5ea;color:#315f3b;border:1px solid #d0e2ca}
+.delivery-notice.warning{background:#fff5df;color:#7a5520;border-color:#ecd49e}
+.delivery-notice.success{background:#eaf5e9;color:#235a31;border-color:#bad6b8}
+.advance-notice{background:#fff6e8;color:#76501f;border:1px solid #ead6ae;margin-top:-5px}
+.safety-box{
+  margin-top:18px;padding:18px;border:1px solid #e6cfae;border-radius:18px;
+  background:#fffaf1
+}
+.safety-box legend{padding:0 6px;color:#664817}
+.safety-intro{margin:0 0 10px;color:#5e5c50;font-size:13px}
+.safety-box ul{margin:0 0 15px;padding-left:20px;color:#5e5c50;font-size:12px;line-height:1.55}
+.check-card{
+  display:flex;gap:10px;align-items:flex-start;border:1px solid #d9c39f;border-radius:13px;
+  padding:12px;background:white;cursor:pointer
+}
+.check-card input{width:auto;margin-top:4px}
+.check-card span{display:grid}
+.check-card small{color:var(--muted);font-weight:500}
+.safety-help{margin:10px 0 0;color:#7b5b29;font-size:11px}
+
+@media(max-width:900px){
+  .order-alert{grid-template-columns:auto 1fr}.order-alert .btn{grid-column:1/-1}
+  .range-grid{grid-template-columns:1fr 1fr}.range-card:last-child{grid-column:1/-1}
+  .logistics-grid{grid-template-columns:1fr 1fr}.logistics-card:first-child{grid-column:1/-1}
+}
+@media(max-width:600px){
+  .order-alert{margin-top:24px;padding:18px;grid-template-columns:1fr;text-align:left}
+  .order-alert-icon{width:40px;height:40px;font-size:20px}
+  .order-alert .btn{grid-column:auto;width:100%}
+  .range{padding-top:58px}.range-grid{grid-template-columns:1fr}.range-card:last-child{grid-column:auto}
+  .range-card{min-height:auto}
+  .logistics-grid{grid-template-columns:1fr}.logistics-card:first-child{grid-column:auto}
+}
