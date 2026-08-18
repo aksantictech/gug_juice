@@ -19,6 +19,11 @@
       <a href="#livraison">Livraison</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="language-switch" aria-label="Choisir la langue">
+      <a href="index.html" class="active" lang="fr" hreflang="fr">FR</a>
+      <a href="en.html" lang="en" hreflang="en">EN</a>
+      <a href="nl.html" lang="nl" hreflang="nl">NL</a>
+    </div>
     <button class="cart-mini" id="cartMini" type="button" aria-label="Ouvrir le panier">
       <span>Panier</span><b id="cartCount">0</b>
     </button>
@@ -212,15 +217,16 @@
   <footer id="contact">
     <div class="footer-inner section-shell">
       <div><img src="assets/gug-logo.jpg" alt="GUG" class="footer-logo" /><p>Jus naturels préparés avec soin à Liedekerke.</p></div>
-      <div><b>Commander</b><a href="tel:+32470923114">0470 92 31 14</a><a href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div><b>Commander</b><a href="tel:+32470923114">0470 923 114</a><a href="mailto:grasienguangu@gmail.com" class="contact-email"><strong>grasienguangu@gmail.com</strong></a><a href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp</a></div>
       <div><b>Livraison</b><span>Gratuite dès 20 € sur les points indiqués</span><span>Commande minimum 3 jours à l’avance</span></div>
       <div><b>Réseaux</b><span>Grace Nguangu</span><span>Facebook • Instagram • WhatsApp</span></div>
     </div>
     <div class="copyright">© 2026 GUG • Le meilleur de la nature dans chaque gorgée.</div>
+    <div class="powered-by">Site propulsé par <a href="https://ny-organization.be/home" target="_blank" rel="noopener">NY O</a></div>
   </footer>
 
   <button class="floating-cart" id="floatingCart" type="button" hidden>
-    <span><b id="floatingQty">0</b> article<span id="plural">s</span></span>
+    <span><b id="floatingQty">0</b> <span id="floatingItemLabel">article</span></span>
     <strong id="floatingTotal">0 €</strong>
     <em>Voir ma commande →</em>
   </button>

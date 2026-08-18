@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#174d2a" name="theme-color"/>
+<meta content="Order GUG natural juices made with ginger, fruit and turmeric, as well as Energy Shots. Orders must be placed at least 3 days in advance." name="description"/>
+<title>GUG — Natural juices | Online ordering</title>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="topbar">
+<a aria-label="GUG home" class="brand" href="#top">
+<img alt="Logo GUG" src="assets/gug-logo.jpg"/>
+</a>
+<nav>
+<a href="#gamme">Our range</a>
+<a href="#produits">Our sizes</a>
+<a href="#livraison">Delivery</a>
+<a href="#contact">Contact</a>
+</nav>
+<div aria-label="Choose language" class="language-switch">
+<a href="index.html" hreflang="fr" lang="fr">FR</a>
+<a class="active" href="en.html" hreflang="en" lang="en">EN</a>
+<a href="nl.html" hreflang="nl" lang="nl">NL</a>
+</div>
+<button aria-label="Open cart" class="cart-mini" id="cartMini" type="button">
+<span>Cart</span><b id="cartCount">0</b>
+</button>
+</header>
+<main id="top">
+<section class="hero section-shell">
+<div class="hero-copy">
+<span class="eyebrow">NATURAL JUICES • ENERGY SHOTS • MADE IN LIEDEKERKE</span>
+<h1>Fruit. Ginger. <em>Full of character.</em></h1>
+<p>Discover our range of natural juices made with ginger, fruit and turmeric, as well as our Energy Shots. Fresh, flavourful drinks prepared with care.</p>
+<div class="hero-actions">
+<a class="btn primary" href="#produits">Order now</a>
+<a class="btn ghost" href="https://wa.me/32470923114" rel="noopener" target="_blank">WhatsApp</a>
+</div>
+<div class="trust-row">
+<span>Ginger • Fruit • Turmeric</span><i></i><span>Energy Shots</span><i></i><span>Order at least 3 days in advance</span>
+</div>
+</div>
+<div class="hero-visual">
+<span class="sunburst"></span>
+<img alt="GUG natural juice bottles with fruit" src="assets/gug-hero.jpg"/>
+<div class="price-pill"><small>from</small><strong>2 €</strong></div>
+<div class="fresh-pill">Fresh • Natural • Delicious</div>
+</div>
+</section>
+<section aria-label="GUG highlights" class="ticker">
+<div>GINGER</div><span>✦</span><div>ORANGE</div><span>✦</span><div>APPLE</div><span>✦</span><div>PINEAPPLE</div><span>✦</span><div>TURMERIC</div><span>✦</span><div>ENERGY SHOTS</div>
+</section>
+<section aria-label="Important information" class="order-alert section-shell">
+<div class="order-alert-icon">!</div>
+<div>
+<span class="eyebrow">IMPORTANT BEFORE ORDERING</span>
+<h2>Place your order at least 3 days in advance.</h2>
+<p>Every order must be placed at least <strong>3 days before</strong> your requested delivery or pickup date.</p>
+</div>
+<a class="btn primary" href="https://wa.me/32470923114" rel="noopener" target="_blank">WhatsApp : 0470 923 114</a>
+</section>
+<section class="range section-shell" id="gamme">
+<div class="section-head">
+<div>
+<span class="eyebrow">DISCOVER THE GUG RANGE</span>
+<h2>Different flavours, different ways to enjoy GUG.</h2>
+</div>
+<p>Choose your size below and specify your preferred flavours or assortment when ordering.</p>
+</div>
+<div class="range-grid">
+<article class="range-card">
+<span class="range-number">01</span>
+<h3>Ginger &amp; fruit</h3>
+<p>Fruity combinations built around ginger, including orange, pineapple and apple.</p>
+<div class="range-tags"><span>Ginger</span><span>Orange</span><span>Ananas</span><span>Apple</span></div>
+</article>
+<article class="range-card range-card-dark">
+<span class="range-number">02</span>
+<h3>Ginger &amp; turmeric</h3>
+<p>A more spiced recipe with the distinctive character of ginger and turmeric.</p>
+<div class="range-tags"><span>Ginger</span><span>Turmeric</span></div>
+</article>
+<article class="range-card range-card-shot">
+<span class="range-number">03</span>
+<h3>Energy Shots</h3>
+<p>A compact, concentrated format for those who enjoy bold flavours.</p>
+<div class="range-tags"><span>Shot</span><span>Convenient format</span></div>
+</article>
+</div>
+</section>
+<section class="products section-shell" id="produits">
+<div class="section-head">
+<div>
+<span class="eyebrow">CHOOSE YOUR SIZE</span>
+<h2>Simple, fresh and ready to order.</h2>
+</div>
+<p>Add your bottles. The total is calculated automatically, then specify your preferred flavours in the form.</p>
+</div>
+<div class="product-grid">
+<article class="product-card" data-product="1l">
+<div class="product-image"><img alt="GUG 1 litre juice bottle" src="assets/gug-1l.jpg"/></div>
+<div class="product-info">
+<div><span class="size">1 LITRE</span><h3>Family size</h3></div>
+<strong class="price">8 €</strong>
+</div>
+<p>Ideal for sharing at home or for several servings.</p>
+<div aria-label="1 litre quantity" class="qty-control">
+<button class="qty-btn minus" data-id="1l" type="button">−</button>
+<span class="qty" id="qty-1l">0</span>
+<button class="qty-btn plus" data-id="1l" type="button">+</button>
+</div>
+</article>
+<article class="product-card featured" data-product="500ml">
+<span class="badge">POPULAR</span>
+<div class="product-image"><img alt="GUG 500 ml juice bottle" src="assets/gug-500ml.jpg"/></div>
+<div class="product-info">
+<div><span class="size">500 ML</span><h3>Everyday size</h3></div>
+<strong class="price">4 €</strong>
+</div>
+<p>A practical size for a refreshing break or your day.</p>
+<div aria-label="500 ml quantity" class="qty-control">
+<button class="qty-btn minus" data-id="500ml" type="button">−</button>
+<span class="qty" id="qty-500ml">0</span>
+<button class="qty-btn plus" data-id="500ml" type="button">+</button>
+</div>
+</article>
+<article class="product-card" data-product="250ml">
+<div class="product-image"><img alt="GUG 250 ml juice bottle" src="assets/gug-250ml.jpg"/></div>
+<div class="product-info">
+<div><span class="size">250 ML</span><h3>Taster size</h3></div>
+<strong class="price">2 €</strong>
+</div>
+<p>A convenient small size to discover GUG or take it anywhere.</p>
+<div aria-label="250 ml quantity" class="qty-control">
+<button class="qty-btn minus" data-id="250ml" type="button">−</button>
+<span class="qty" id="qty-250ml">0</span>
+<button class="qty-btn plus" data-id="250ml" type="button">+</button>
+</div>
+</article>
+</div>
+</section>
+<section class="nature section-shell" id="naturel">
+<div class="nature-card">
+<div class="nature-image"><img alt="Ginger, orange, apple and pineapple" src="assets/gug-ingredients.jpg"/></div>
+<div class="nature-copy">
+<span class="eyebrow light">THE TASTE OF NATURE</span>
+<h2>Four ingredients. One recipe full of freshness.</h2>
+<div class="benefit-grid">
+<div><b>Ginger</b><span>A lively note with plenty of character.</span></div>
+<div><b>Orange</b><span>Fruity freshness and natural sweetness.</span></div>
+<div><b>Apple</b><span>A soft roundness that balances the recipe.</span></div>
+<div><b>Ananas</b><span>A generous tropical touch.</span></div>
+</div>
+<div class="clean-labels"><span>No preservatives</span><span>No added sugar</span><span>Prepared with care</span></div>
+</div>
+</div>
+</section>
+<section class="logistics section-shell" id="livraison">
+<div class="section-head">
+<div>
+<span class="eyebrow">DELIVERY &amp; PAYMENT</span>
+<h2>Simple rules shown before confirmation.</h2>
+</div>
+<p>The cart total covers the products. Any transport charges are communicated before confirmation.</p>
+</div>
+<div class="logistics-grid">
+<article class="logistics-card free">
+<span class="logistics-kicker">DELIVERY WITH NO ADDITIONAL CHARGE</span>
+<h3>For orders of €20 or more</h3>
+<ul>
+<li>Bruxelles-Midi</li>
+<li>Bruxelles-Central</li>
+<li>Liedekerke</li>
+<li>Station Denderleeuw</li>
+</ul>
+</article>
+<article class="logistics-card">
+<span class="logistics-kicker">OTHER DESTINATIONS</span>
+<h3>Transport charges apply</h3>
+<p>For any other destination, transport charges are calculated and communicated before final order confirmation.</p>
+</article>
+<article class="logistics-card">
+<span class="logistics-kicker">PAYMENT</span>
+<h3>Cash or bank transfer</h3>
+<p>Choose your payment method in the form. No online payment is requested on this page.</p>
+</article>
+</div>
+</section>
+<section class="how section-shell">
+<div class="section-head compact"><div><span class="eyebrow">HOW DOES IT WORK?</span><h2>Your order in under a minute.</h2></div></div>
+<div class="steps">
+<div><span>01</span><b>Choose</b><p>Select your sizes, quantities and preferred flavours.</p></div>
+<div><span>02</span><b>Schedule</b><p>Choose a date at least 3 days in advance.</p></div>
+<div><span>03</span><b>Send</b><p>Your order is prepared in WhatsApp with one click.</p></div>
+<div><span>04</span><b>Confirm</b><p>GUG confirms availability, delivery and any applicable charges.</p></div>
+</div>
+</section>
+</main>
+<footer id="contact">
+<div class="footer-inner section-shell">
+<div><img alt="GUG" class="footer-logo" src="assets/gug-logo.jpg"/><p>Natural juices prepared with care in Liedekerke.</p></div>
+<div><b>Order</b><a href="tel:+32470923114">0470 923 114</a><a class="contact-email" href="mailto:grasienguangu@gmail.com"><strong>grasienguangu@gmail.com</strong></a><a href="https://wa.me/32470923114" rel="noopener" target="_blank">WhatsApp</a></div>
+<div><b>Delivery</b><span>No extra delivery charge from €20 at the listed locations</span><span>Order at least 3 days in advance</span></div>
+<div><b>Social media</b><span>Grace Nguangu</span><span>Facebook • Instagram • WhatsApp</span></div>
+</div>
+<div class="copyright">© 2026 GUG • The best of nature in every sip.</div>
+<div class="powered-by">Site powered by <a href="https://ny-organization.be/home" rel="noopener" target="_blank">NY O</a></div>
+</footer>
+<button class="floating-cart" hidden="" id="floatingCart" type="button">
+<span><b id="floatingQty">0</b> <span id="floatingItemLabel">item</span></span>
+<strong id="floatingTotal">0 €</strong>
+<em>View my order →</em>
+</button>
+<div class="drawer-backdrop" hidden="" id="drawerBackdrop"></div>
+<aside aria-hidden="true" aria-label="Your order" class="cart-drawer" id="cartDrawer">
+<div class="drawer-head">
+<div><span class="eyebrow">YOUR ORDER</span><h2>GUG cart</h2></div>
+<button aria-label="Close" class="close" id="closeDrawer" type="button">×</button>
+</div>
+<div class="cart-items" id="cartItems"></div>
+<div class="cart-empty" id="cartEmpty">Your cart is empty. Add a bottle to get started.</div>
+<div class="cart-total" hidden="" id="cartTotalBlock">
+<span>Product total</span><strong id="drawerTotal">0 €</strong>
+<small id="deliveryRule">Any transport charges are confirmed with you before validation.</small>
+</div>
+<form hidden="" id="orderForm">
+<div class="form-title"><span>Contact details</span><small>* required fields</small></div>
+<label>Full name *<input autocomplete="name" id="customerName" placeholder="Your name" required="" type="text"/></label>
+<label>Phone *<input autocomplete="tel" id="customerPhone" placeholder="04…" required="" type="tel"/></label>
+<fieldset>
+<legend>Fulfilment method *</legend>
+<label class="radio-card"><input checked="" name="delivery" type="radio" value="Livraison"/><span><b>Delivery / meeting point</b><small>Choose your destination below</small></span></label>
+<label class="radio-card"><input name="delivery" type="radio" value="Retrait à Liedekerke"/><span><b>Pickup</b><small>Pickup in Liedekerke</small></span></label>
+</fieldset>
+<div id="deliveryFields">
+<label>Destination *
+          <select id="deliveryDestination" required="">
+<option value="">Choose a destination</option>
+<option value="Bruxelles-Midi">Bruxelles-Midi</option>
+<option value="Bruxelles-Central">Bruxelles-Central</option>
+<option value="Liedekerke">Liedekerke</option>
+<option value="Station Denderleeuw">Station Denderleeuw</option>
+<option value="Autre destination">Other destination</option>
+</select>
+</label>
+<div class="delivery-notice" id="deliveryNotice">
+          Delivery with no additional charge at the listed locations for orders of €20 or more.
+        </div>
+</div>
+<div hidden="" id="addressFields">
+<label>Exact address / destination *<input autocomplete="street-address" id="address" placeholder="Street, number or meeting point" type="text"/></label>
+<div class="two-cols">
+<label>Postal code<input autocomplete="postal-code" id="postalCode" placeholder="1000" type="text"/></label>
+<label>City<input autocomplete="address-level2" id="city" placeholder="City" type="text"/></label>
+</div>
+</div>
+<fieldset>
+<legend>Payment method *</legend>
+<label class="radio-card"><input checked="" name="payment" type="radio" value="Cash"/><span><b>Cash</b><small>Cash payment according to the agreed arrangements</small></span></label>
+<label class="radio-card"><input name="payment" type="radio" value="Virement bancaire"/><span><b>Bank transfer</b><small>Payment details are provided when the order is confirmed</small></span></label>
+</fieldset>
+<label>Requested date *<input id="deliveryDate" required="" type="date"/></label>
+<div class="advance-notice"><b>At least 3 days in advance.</b> The calendar automatically blocks dates that are too soon.</div>
+<label>Preferred flavours / assortment<textarea id="flavors" placeholder="E.g. ginger-pineapple, ginger-orange, turmeric, Energy Shots, assortment…" rows="3"></textarea></label>
+<label>Notes / details<textarea id="note" placeholder="E.g. preferred time, meeting details, instructions…" rows="3"></textarea></label>
+<fieldset class="safety-box">
+<legend>Precautions before ordering *</legend>
+<p class="safety-intro">Before completing your order, check that none of the following situations applies to you:</p>
+<ul>
+<li>Allergy or intolerance to any of the ingredients</li>
+<li>Regular use of medication requiring a compatibility check</li>
+<li>Anticoagulant treatment or medication affecting blood clotting</li>
+<li>Pregnancy or breastfeeding — you may wish to seek advice</li>
+<li>Digestive sensitivity or condition requiring precautions</li>
+<li>Another particular situation</li>
+</ul>
+<label class="check-card">
+<input id="safetyConfirm" required="" type="checkbox"/>
+<span><b>None of these situations</b><small>I confirm that none of the situations listed above applies to me.</small></span>
+</label>
+<p class="safety-help">If any of these situations applies to you, do not tick this box and contact GUG on WhatsApp before ordering.</p>
+</fieldset>
+<button class="btn primary full" type="submit">Send my order on WhatsApp</button>
+<p class="form-note">No payment is requested on this page. GUG confirms availability, fulfilment arrangements and any transport charges via WhatsApp.</p>
+</form>
+</aside>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

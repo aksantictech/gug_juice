@@ -11,6 +11,75 @@ const FREE_DESTINATIONS = new Set([
   'Station Denderleeuw'
 ]);
 
+const LANG = (document.documentElement.lang || 'fr').toLowerCase().slice(0,2);
+
+const I18N = {
+  fr: {
+    item1:'article', itemN:'articles',
+    addBottle:'Ajoutez au moins une bouteille.',
+    added:'ajouté au panier',
+    minDate:'Choisissez une date au minimum 3 jours à l’avance.',
+    pickup:'Retrait à Liedekerke',
+    pickupFree:'Retrait à Liedekerke : aucun frais de transport à ajouter.',
+    chooseDestination:'Choisissez une destination. Livraison sans frais supplémentaires sur les points indiqués dès 20 € de commande.',
+    freeAt:(d)=>`Livraison sans frais supplémentaires à ${d} : votre commande atteint le minimum de 20 €.`,
+    under20:(d,total)=>`Pour ${d}, la livraison sans frais supplémentaires est disponible à partir de 20 €. Votre panier est actuellement de ${total} ; les frais éventuels seront communiqués avant confirmation.`,
+    other:'Autre destination : des frais de transport sont obligatoires et seront communiqués avant confirmation.',
+    orderReady:(n)=>`Commande ${n} prête dans WhatsApp`,
+    msgHello:(n)=>`Bonjour GUG, je souhaite confirmer ma commande ${n}.`,
+    msgTotal:'Total produits', msgName:'Nom', msgPhone:'Téléphone', msgReception:'Réception',
+    msgDestination:'Destination', msgPayment:'Paiement', msgAddress:'Adresse / destination exacte',
+    msgDate:'Date souhaitée', msgFlavors:'Goûts / composition', msgNote:'Note', msgDelivery:'Livraison',
+    msgPrecautions:'Précautions : je confirme qu’aucune des situations particulières indiquées dans le formulaire ne me concerne.',
+    msgConfirm:'Merci de me confirmer la disponibilité, le montant final et les modalités de livraison/retrait.',
+    modeDelivery:'Livraison', modePickup:'Retrait à Liedekerke',
+    paymentCash:'Cash', paymentTransfer:'Virement bancaire'
+  },
+  en: {
+    item1:'item', itemN:'items',
+    addBottle:'Add at least one bottle.',
+    added:'added to cart',
+    minDate:'Choose a date at least 3 days in advance.',
+    pickup:'Pickup in Liedekerke',
+    pickupFree:'Pickup in Liedekerke: no transport charge is added.',
+    chooseDestination:'Choose a destination. Delivery has no additional charge at the listed locations for orders of €20 or more.',
+    freeAt:(d)=>`Delivery with no additional charge to ${d}: your order reaches the €20 minimum.`,
+    under20:(d,total)=>`For ${d}, delivery has no additional charge from €20. Your cart is currently ${total}; any applicable charge will be communicated before confirmation.`,
+    other:'Other destination: transport charges apply and will be communicated before confirmation.',
+    orderReady:(n)=>`Order ${n} is ready in WhatsApp`,
+    msgHello:(n)=>`Hello GUG, I would like to confirm my order ${n}.`,
+    msgTotal:'Product total', msgName:'Name', msgPhone:'Phone', msgReception:'Fulfilment',
+    msgDestination:'Destination', msgPayment:'Payment', msgAddress:'Exact address / destination',
+    msgDate:'Requested date', msgFlavors:'Flavours / assortment', msgNote:'Note', msgDelivery:'Delivery',
+    msgPrecautions:'Precautions: I confirm that none of the particular situations listed in the form applies to me.',
+    msgConfirm:'Please confirm availability, the final amount and the delivery/pickup arrangements.',
+    modeDelivery:'Delivery', modePickup:'Pickup in Liedekerke',
+    paymentCash:'Cash', paymentTransfer:'Bank transfer'
+  },
+  nl: {
+    item1:'artikel', itemN:'artikelen',
+    addBottle:'Voeg minstens één fles toe.',
+    added:'toegevoegd aan de winkelmand',
+    minDate:'Kies een datum minstens 3 dagen vooraf.',
+    pickup:'Afhalen in Liedekerke',
+    pickupFree:'Afhalen in Liedekerke: er worden geen transportkosten toegevoegd.',
+    chooseDestination:'Kies een bestemming. Op de vermelde locaties zijn er geen extra leveringskosten voor bestellingen vanaf € 20.',
+    freeAt:(d)=>`Geen extra leveringskosten naar ${d}: uw bestelling bereikt het minimum van € 20.`,
+    under20:(d,total)=>`Voor ${d} zijn er vanaf € 20 geen extra leveringskosten. Uw winkelmand bedraagt momenteel ${total}; eventuele kosten worden vóór bevestiging meegedeeld.`,
+    other:'Andere bestemming: transportkosten zijn verplicht en worden vóór bevestiging meegedeeld.',
+    orderReady:(n)=>`Bestelling ${n} staat klaar in WhatsApp`,
+    msgHello:(n)=>`Hallo GUG, ik wil mijn bestelling ${n} bevestigen.`,
+    msgTotal:'Totaal producten', msgName:'Naam', msgPhone:'Telefoon', msgReception:'Ontvangst',
+    msgDestination:'Bestemming', msgPayment:'Betaling', msgAddress:'Exact adres / bestemming',
+    msgDate:'Gewenste datum', msgFlavors:'Smaken / assortiment', msgNote:'Opmerking', msgDelivery:'Levering',
+    msgPrecautions:'Voorzorgsmaatregelen: ik bevestig dat geen van de bijzondere situaties uit het formulier op mij van toepassing is.',
+    msgConfirm:'Bevestig alstublieft de beschikbaarheid, het eindbedrag en de leverings-/afhaalafspraken.',
+    modeDelivery:'Levering', modePickup:'Afhalen in Liedekerke',
+    paymentCash:'Cash', paymentTransfer:'Bankoverschrijving'
+  }
+};
+const T = I18N[LANG] || I18N.fr;
+
 const state = { '1l': 0, '500ml': 0, '250ml': 0 };
 const $ = (id) => document.getElementById(id);
 const drawer = $('cartDrawer');
@@ -35,37 +104,18 @@ function deliveryStatus(){
   const destination = $('deliveryDestination') ? $('deliveryDestination').value : '';
 
   if(mode === 'Retrait à Liedekerke'){
-    return {
-      text: 'Retrait à Liedekerke : aucun frais de transport à ajouter.',
-      css: 'success'
-    };
+    return { text: T.pickupFree, css: 'success' };
   }
-
   if(!destination){
-    return {
-      text: 'Choisissez une destination. Livraison sans frais supplémentaires sur les points indiqués dès 20 € de commande.',
-      css: ''
-    };
+    return { text: T.chooseDestination, css: '' };
   }
-
   if(FREE_DESTINATIONS.has(destination) && total >= 20){
-    return {
-      text: `Livraison sans frais supplémentaires à ${destination} : votre commande atteint le minimum de 20 €.`,
-      css: 'success'
-    };
+    return { text: T.freeAt(destination), css: 'success' };
   }
-
   if(FREE_DESTINATIONS.has(destination) && total < 20){
-    return {
-      text: `Pour ${destination}, la livraison sans frais supplémentaires est disponible à partir de 20 €. Votre panier est actuellement de ${money(total)} ; les frais éventuels seront communiqués avant confirmation.`,
-      css: 'warning'
-    };
+    return { text: T.under20(destination, money(total)), css: 'warning' };
   }
-
-  return {
-    text: 'Autre destination : des frais de transport sont obligatoires et seront communiqués avant confirmation.',
-    css: 'warning'
-  };
+  return { text: T.other, css: 'warning' };
 }
 
 function updateDeliveryNotice(){
@@ -85,7 +135,7 @@ function render(){
   $('cartCount').textContent = qty;
   $('floatingQty').textContent = qty;
   $('floatingTotal').textContent = money(total);
-  $('plural').textContent = qty > 1 ? 's' : '';
+  $('floatingItemLabel').textContent = qty === 1 ? T.item1 : T.itemN;
   floatingCart.hidden = qty === 0;
 
   const rows = Object.entries(state)
@@ -101,14 +151,17 @@ function render(){
 }
 
 function toast(message){
-  const el = $('toast'); el.textContent = message; el.classList.add('show');
-  clearTimeout(window.__toast); window.__toast = setTimeout(()=>el.classList.remove('show'),1800);
+  const el = $('toast');
+  el.textContent = message;
+  el.classList.add('show');
+  clearTimeout(window.__toast);
+  window.__toast = setTimeout(()=>el.classList.remove('show'),1800);
 }
 
 function change(id, delta){
   state[id] = Math.max(0, state[id] + delta);
   render();
-  if(delta > 0) toast(`${PRODUCTS[id].name} ajouté au panier`);
+  if(delta > 0) toast(`${PRODUCTS[id].name} ${T.added}`);
 }
 
 document.querySelectorAll('.plus').forEach(b => b.addEventListener('click',()=>change(b.dataset.id,1)));
@@ -156,17 +209,23 @@ function localISO(date){
   return copy.toISOString().split('T')[0];
 }
 
-// Toute commande doit être prévue au minimum 3 jours à l'avance.
 const minDate = new Date();
 minDate.setDate(minDate.getDate() + 3);
 $('deliveryDate').min = localISO(minDate);
+
+function localizedMode(raw){
+  return raw === 'Retrait à Liedekerke' ? T.modePickup : T.modeDelivery;
+}
+function localizedPayment(raw){
+  return raw === 'Virement bancaire' ? T.paymentTransfer : T.paymentCash;
+}
 
 orderForm.addEventListener('submit',(e)=>{
   e.preventDefault();
   const { qty, total } = totals();
 
   if(!qty){
-    toast('Ajoutez au moins une bouteille.');
+    toast(T.addBottle);
     return;
   }
 
@@ -174,15 +233,16 @@ orderForm.addEventListener('submit',(e)=>{
 
   const selectedDate = $('deliveryDate').value;
   if(selectedDate && selectedDate < $('deliveryDate').min){
-    toast('Choisissez une date au minimum 3 jours à l’avance.');
+    toast(T.minDate);
     $('deliveryDate').focus();
     return;
   }
 
-  const mode = document.querySelector('input[name="delivery"]:checked').value;
-  const payment = document.querySelector('input[name="payment"]:checked').value;
-  const destination = mode === 'Livraison' ? $('deliveryDestination').value : 'Retrait à Liedekerke';
+  const modeRaw = document.querySelector('input[name="delivery"]:checked').value;
+  const paymentRaw = document.querySelector('input[name="payment"]:checked').value;
+  const destination = modeRaw === 'Livraison' ? $('deliveryDestination').value : 'Liedekerke';
   const orderNo = `GUG-${new Date().getFullYear()}-${Math.floor(1000 + Math.random()*9000)}`;
+
   const items = Object.entries(state)
     .filter(([,q])=>q>0)
     .map(([id,q])=>`• ${q} × ${PRODUCTS[id].name} = ${money(q*PRODUCTS[id].price)}`)
@@ -191,38 +251,38 @@ orderForm.addEventListener('submit',(e)=>{
   const status = deliveryStatus();
 
   const parts = [
-    `Bonjour GUG, je souhaite confirmer ma commande ${orderNo}.`,
+    T.msgHello(orderNo),
     '',
     items,
     '',
-    `Total produits : ${money(total)}`,
-    `Nom : ${$('customerName').value.trim()}`,
-    `Téléphone : ${$('customerPhone').value.trim()}`,
-    `Réception : ${mode}`,
-    `Destination : ${destination}`,
-    `Paiement : ${payment}`
+    `${T.msgTotal} : ${money(total)}`,
+    `${T.msgName} : ${$('customerName').value.trim()}`,
+    `${T.msgPhone} : ${$('customerPhone').value.trim()}`,
+    `${T.msgReception} : ${localizedMode(modeRaw)}`,
+    `${T.msgDestination} : ${destination}`,
+    `${T.msgPayment} : ${localizedPayment(paymentRaw)}`
   ];
 
-  if(mode === 'Livraison' && destination === 'Autre destination'){
+  if(modeRaw === 'Livraison' && $('deliveryDestination').value === 'Autre destination'){
     const addr = [$('address').value.trim(), $('postalCode').value.trim(), $('city').value.trim()].filter(Boolean).join(', ');
-    parts.push(`Adresse / destination exacte : ${addr}`);
+    parts.push(`${T.msgAddress} : ${addr}`);
   }
 
-  parts.push(`Date souhaitée : ${selectedDate}`);
+  parts.push(`${T.msgDate} : ${selectedDate}`);
 
-  if($('flavors').value.trim()) parts.push(`Goûts / composition : ${$('flavors').value.trim()}`);
-  if($('note').value.trim()) parts.push(`Note : ${$('note').value.trim()}`);
+  if($('flavors').value.trim()) parts.push(`${T.msgFlavors} : ${$('flavors').value.trim()}`);
+  if($('note').value.trim()) parts.push(`${T.msgNote} : ${$('note').value.trim()}`);
 
   parts.push(
-    `Livraison : ${status.text}`,
-    'Précautions : je confirme qu’aucune des situations particulières indiquées dans le formulaire ne me concerne.',
+    `${T.msgDelivery} : ${status.text}`,
+    T.msgPrecautions,
     '',
-    'Merci de me confirmer la disponibilité, le montant final et les modalités de livraison/retrait.'
+    T.msgConfirm
   );
 
   const url = `https://wa.me/32470923114?text=${encodeURIComponent(parts.join('\n'))}`;
   window.open(url, '_blank', 'noopener');
-  toast(`Commande ${orderNo} prête dans WhatsApp`);
+  toast(T.orderReady(orderNo));
 });
 
 render();

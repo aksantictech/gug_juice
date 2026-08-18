@@ -1,35 +1,52 @@
-# GUG Order — V2
+# GUG Order — V3 multilingue
 
 Mini-site statique de commande GUG, prêt pour Vercel.
 
+## Langues
+- Français : `index.html`
+- English : `en.html`
+- Nederlands : `nl.html`
+
+Le sélecteur FR / EN / NL se trouve dans l’en-tête.
+
+## Contact
+- WhatsApp / téléphone : 0470 923 114
+- E-mail : grasienguangu@gmail.com
+
+## Attribution
+Le pied de page contient :
+- Site propulsé par NY O
+- https://ny-organization.be/home
+
 ## Fonctionnalités
 - Panier dynamique : 1 L, 500 ml et 250 ml.
-- Présentation de la gamme : gingembre & fruits, curcuma, Energy Shots.
-- Commande au minimum 3 jours à l'avance (contrôle automatique de la date).
+- Présentation gingembre, fruits, curcuma et Energy Shots.
+- Commande au minimum 3 jours à l’avance.
 - Livraison sans frais supplémentaires dès 20 € vers :
   - Bruxelles-Midi
   - Bruxelles-Central
   - Liedekerke
   - Station Denderleeuw
-- Autres destinations : frais de transport à confirmer avant validation.
+- Autres destinations : frais de transport à confirmer.
 - Paiement : cash ou virement bancaire.
-- Champ pour préciser les goûts / l'assortiment.
+- Champ goûts / assortiment.
 - Bloc de précautions avec confirmation obligatoire.
-- Envoi final de la commande préremplie vers WhatsApp : 0470 923 114.
+- Message WhatsApp généré dans la langue sélectionnée.
 
 ## Test local
-Ouvrir le dossier dans PowerShell puis lancer :
+Dans PowerShell :
 
 python -m http.server 8080
 
-Ensuite ouvrir http://localhost:8080
+Puis :
+- http://localhost:8080
+- http://localhost:8080/en.html
+- http://localhost:8080/nl.html
 
 ## Déploiement Vercel
 1. Mettre le dossier sur GitHub.
-2. Dans Vercel : Add New > Project.
+2. Vercel > Add New > Project.
 3. Importer le dépôt.
 4. Framework Preset : Other.
-5. Aucune commande de build nécessaire.
-6. Déployer.
-
-Le site est 100 % statique : aucune base de données n'est nécessaire pour cette V2.
+5. Aucune commande de build.
+6. Deploy.
