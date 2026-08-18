@@ -167,3 +167,104 @@ select:focus{border-color:#7daa84;box-shadow:0 0 0 3px rgba(80,139,92,.1)}
 @media(max-width:600px){
   .language-switch a{width:30px;height:28px;font-size:10px}
 }
+
+
+/* --- GUG V4 : logo animé, favicon et branding NY O --- */
+.brand{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  isolation:isolate;
+}
+.brand::after{
+  content:"";
+  position:absolute;
+  inset:8px -6px;
+  border-radius:18px;
+  background:radial-gradient(circle, rgba(239,141,37,.14), transparent 68%);
+  opacity:.35;
+  z-index:-1;
+  animation:gugLogoAura 3.8s ease-in-out infinite;
+}
+.brand .moving-gug-logo{
+  transform-origin:50% 55%;
+  will-change:transform,filter;
+  animation:gugLogoFloat 3.8s ease-in-out infinite;
+}
+.brand:hover .moving-gug-logo{
+  animation-duration:1.35s;
+  filter:drop-shadow(0 8px 12px rgba(23,77,42,.16));
+}
+
+@keyframes gugLogoFloat{
+  0%,100%{
+    transform:translate3d(0,0,0) rotate(-.6deg) scale(1);
+    filter:drop-shadow(0 3px 5px rgba(23,77,42,.08));
+  }
+  25%{
+    transform:translate3d(2px,-2px,0) rotate(.4deg) scale(1.015);
+  }
+  50%{
+    transform:translate3d(0,-5px,0) rotate(.8deg) scale(1.025);
+    filter:drop-shadow(0 8px 12px rgba(23,77,42,.14));
+  }
+  75%{
+    transform:translate3d(-2px,-2px,0) rotate(-.2deg) scale(1.012);
+  }
+}
+@keyframes gugLogoAura{
+  0%,100%{transform:scale(.92);opacity:.20}
+  50%{transform:scale(1.08);opacity:.52}
+}
+
+.powered-by{
+  border-top:1px solid rgba(255,255,255,.07);
+  padding:17px 18px 20px;
+  text-align:center;
+}
+.ny-powered-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#d9e6dc !important;
+  font-size:14px !important;
+  font-weight:650;
+  letter-spacing:.01em;
+  transition:transform .2s ease,color .2s ease;
+}
+.ny-powered-link:hover{
+  color:white !important;
+  transform:translateY(-1px);
+  text-decoration:none !important;
+}
+.ny-powered-link strong{
+  color:white;
+  font-size:15px;
+  font-weight:850;
+}
+.ny-powered-logo{
+  width:54px;
+  height:42px;
+  object-fit:contain;
+  background:white;
+  border-radius:8px;
+  padding:3px;
+  box-shadow:0 5px 16px rgba(0,0,0,.16);
+}
+
+@media(max-width:600px){
+  .ny-powered-link{
+    font-size:13px !important;
+    gap:9px;
+  }
+  .ny-powered-link strong{font-size:14px}
+  .ny-powered-logo{width:48px;height:38px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .brand::after,
+  .brand .moving-gug-logo{
+    animation:none !important;
+  }
+}

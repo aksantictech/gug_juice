@@ -1,322 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#174d2a" />
-  <meta name="description" content="Commandez les jus naturels GUG à base de gingembre, fruits et curcuma ainsi que nos Energy Shots. Commande minimum 3 jours à l’avance." />
-  <title>GUG — Jus naturels | Commande en ligne</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#174d2a" name="theme-color"/>
+<meta content="Commandez les jus naturels GUG à base de gingembre, fruits et curcuma ainsi que nos Energy Shots. Commande minimum 3 jours à l’avance." name="description"/>
+<title>GUG — Jus naturels | Commande en ligne</title>
+<link href="assets/gug-favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="assets/gug-favicon-192.png" rel="icon" sizes="192x192" type="image/png"/><link href="assets/gug-apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="GUG accueil">
-      <img src="assets/gug-logo.jpg" alt="Logo GUG" />
-    </a>
-    <nav>
-      <a href="#gamme">Notre gamme</a>
-      <a href="#produits">Nos formats</a>
-      <a href="#livraison">Livraison</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="language-switch" aria-label="Choisir la langue">
-      <a href="index.html" class="active" lang="fr" hreflang="fr">FR</a>
-      <a href="en.html" lang="en" hreflang="en">EN</a>
-      <a href="nl.html" lang="nl" hreflang="nl">NL</a>
-    </div>
-    <button class="cart-mini" id="cartMini" type="button" aria-label="Ouvrir le panier">
-      <span>Panier</span><b id="cartCount">0</b>
-    </button>
-  </header>
-
-  <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-copy">
-        <span class="eyebrow">JUS NATURELS • ENERGY SHOTS • FAIT À LIEDEKERKE</span>
-        <h1>Du fruit. Du gingembre. <em>Du caractère.</em></h1>
-        <p>Découvrez notre gamme de jus naturels à base de gingembre, fruits et curcuma ainsi que nos Energy Shots. Des préparations fraîches, pleines de goût et réalisées avec soin.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#produits">Commander maintenant</a>
-          <a class="btn ghost" href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-        <div class="trust-row">
-          <span>Gingembre • Fruits • Curcuma</span><i></i><span>Energy Shots</span><i></i><span>Commande ≥ 3 jours à l’avance</span>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <span class="sunburst"></span>
-        <img src="assets/gug-hero.jpg" alt="Bouteilles de jus naturels GUG avec fruits" />
-        <div class="price-pill"><small>à partir de</small><strong>2 €</strong></div>
-        <div class="fresh-pill">Frais • Sain • Délicieux</div>
-      </div>
-    </section>
-
-    <section class="ticker" aria-label="Atouts GUG">
-      <div>GINGEMBRE</div><span>✦</span><div>ORANGE</div><span>✦</span><div>POMME</div><span>✦</span><div>ANANAS</div><span>✦</span><div>CURCUMA</div><span>✦</span><div>ENERGY SHOTS</div>
-    </section>
-
-    <section class="order-alert section-shell" aria-label="Information importante">
-      <div class="order-alert-icon">!</div>
-      <div>
-        <span class="eyebrow">IMPORTANT AVANT DE COMMANDER</span>
-        <h2>Prévoyez votre commande au minimum 3 jours à l’avance.</h2>
-        <p>Toute commande doit être passée au moins <strong>3 jours avant</strong> la date souhaitée de livraison ou de retrait.</p>
-      </div>
-      <a class="btn primary" href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp : 0470 923 114</a>
-    </section>
-
-    <section class="range section-shell" id="gamme">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">DÉCOUVREZ LA GAMME GUG</span>
-          <h2>Plusieurs goûts, plusieurs façons de profiter de GUG.</h2>
-        </div>
-        <p>Choisissez votre format ci-dessous et précisez vos goûts ou votre assortiment au moment de la commande.</p>
-      </div>
-
-      <div class="range-grid">
-        <article class="range-card">
-          <span class="range-number">01</span>
-          <h3>Gingembre & fruits</h3>
-          <p>Des associations fruitées autour du gingembre, notamment orange, ananas et pomme.</p>
-          <div class="range-tags"><span>Gingembre</span><span>Orange</span><span>Ananas</span><span>Pomme</span></div>
-        </article>
-        <article class="range-card range-card-dark">
-          <span class="range-number">02</span>
-          <h3>Gingembre & curcuma</h3>
-          <p>Une recette au profil plus épicé, avec la signature du gingembre et du curcuma.</p>
-          <div class="range-tags"><span>Gingembre</span><span>Curcuma</span></div>
-        </article>
-        <article class="range-card range-card-shot">
-          <span class="range-number">03</span>
-          <h3>Energy Shots</h3>
-          <p>Un petit format concentré et pratique, pensé pour les amateurs de saveurs intenses.</p>
-          <div class="range-tags"><span>Shot</span><span>Format pratique</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="products section-shell" id="produits">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">CHOISISSEZ VOTRE FORMAT</span>
-          <h2>Simple, frais, prêt à commander.</h2>
-        </div>
-        <p>Ajoutez vos bouteilles. Le total se calcule automatiquement, puis précisez les goûts souhaités dans le formulaire.</p>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card" data-product="1l">
-          <div class="product-image"><img src="assets/gug-1l.jpg" alt="Jus GUG bouteille 1 litre" /></div>
-          <div class="product-info">
-            <div><span class="size">1 LITRE</span><h3>Format famille</h3></div>
-            <strong class="price">8 €</strong>
-          </div>
-          <p>Idéal à partager à la maison ou pour plusieurs portions.</p>
-          <div class="qty-control" aria-label="Quantité 1 litre">
-            <button class="qty-btn minus" type="button" data-id="1l">−</button>
-            <span class="qty" id="qty-1l">0</span>
-            <button class="qty-btn plus" type="button" data-id="1l">+</button>
-          </div>
-        </article>
-
-        <article class="product-card featured" data-product="500ml">
-          <span class="badge">POPULAIRE</span>
-          <div class="product-image"><img src="assets/gug-500ml.jpg" alt="Jus GUG bouteille 500 millilitres" /></div>
-          <div class="product-info">
-            <div><span class="size">500 ML</span><h3>Format plaisir</h3></div>
-            <strong class="price">4 €</strong>
-          </div>
-          <p>Le bon format pour une pause fraîcheur ou votre journée.</p>
-          <div class="qty-control" aria-label="Quantité 500 millilitres">
-            <button class="qty-btn minus" type="button" data-id="500ml">−</button>
-            <span class="qty" id="qty-500ml">0</span>
-            <button class="qty-btn plus" type="button" data-id="500ml">+</button>
-          </div>
-        </article>
-
-        <article class="product-card" data-product="250ml">
-          <div class="product-image"><img src="assets/gug-250ml.jpg" alt="Jus GUG bouteille 250 millilitres" /></div>
-          <div class="product-info">
-            <div><span class="size">250 ML</span><h3>Format découverte</h3></div>
-            <strong class="price">2 €</strong>
-          </div>
-          <p>Petit format pratique pour découvrir GUG ou l'emporter partout.</p>
-          <div class="qty-control" aria-label="Quantité 250 millilitres">
-            <button class="qty-btn minus" type="button" data-id="250ml">−</button>
-            <span class="qty" id="qty-250ml">0</span>
-            <button class="qty-btn plus" type="button" data-id="250ml">+</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="nature section-shell" id="naturel">
-      <div class="nature-card">
-        <div class="nature-image"><img src="assets/gug-ingredients.jpg" alt="Gingembre, orange, pomme et ananas" /></div>
-        <div class="nature-copy">
-          <span class="eyebrow light">LE GOÛT DU NATUREL</span>
-          <h2>Quatre ingrédients. Une recette pleine de fraîcheur.</h2>
-          <div class="benefit-grid">
-            <div><b>Gingembre</b><span>Une note vive et pleine de caractère.</span></div>
-            <div><b>Orange</b><span>Fraîcheur fruitée et douceur naturelle.</span></div>
-            <div><b>Pomme</b><span>Une rondeur douce pour équilibrer la recette.</span></div>
-            <div><b>Ananas</b><span>Une touche tropicale et généreuse.</span></div>
-          </div>
-          <div class="clean-labels"><span>Sans conservateur</span><span>Sans sucre ajouté</span><span>Préparé avec soin</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="logistics section-shell" id="livraison">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">LIVRAISON & PAIEMENT</span>
-          <h2>Des règles simples, affichées avant confirmation.</h2>
-        </div>
-        <p>Le total affiché dans le panier correspond aux produits. Les frais de transport éventuels sont communiqués avant confirmation.</p>
-      </div>
-
-      <div class="logistics-grid">
-        <article class="logistics-card free">
-          <span class="logistics-kicker">LIVRAISON SANS FRAIS SUPPLÉMENTAIRES</span>
-          <h3>À partir de 20 € de commande</h3>
-          <ul>
-            <li>Bruxelles-Midi</li>
-            <li>Bruxelles-Central</li>
-            <li>Liedekerke</li>
-            <li>Station Denderleeuw</li>
-          </ul>
-        </article>
-
-        <article class="logistics-card">
-          <span class="logistics-kicker">AUTRES DESTINATIONS</span>
-          <h3>Frais de transport obligatoires</h3>
-          <p>Pour toute autre destination, les frais de transport sont calculés et communiqués avant la confirmation définitive de la commande.</p>
-        </article>
-
-        <article class="logistics-card">
-          <span class="logistics-kicker">PAIEMENT</span>
-          <h3>Cash ou virement</h3>
-          <p>Choisissez votre mode de paiement dans le formulaire. Aucun paiement en ligne n’est demandé sur cette page.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="how section-shell">
-      <div class="section-head compact"><div><span class="eyebrow">COMMENT ÇA MARCHE ?</span><h2>Votre commande en moins d'une minute.</h2></div></div>
-      <div class="steps">
-        <div><span>01</span><b>Choisissez</b><p>Sélectionnez vos formats, quantités et goûts souhaités.</p></div>
-        <div><span>02</span><b>Planifiez</b><p>Choisissez une date au minimum 3 jours à l’avance.</p></div>
-        <div><span>03</span><b>Envoyez</b><p>Votre commande est préparée dans WhatsApp en un clic.</p></div>
-        <div><span>04</span><b>Confirmez</b><p>GUG confirme disponibilité, livraison et frais éventuels.</p></div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="footer-inner section-shell">
-      <div><img src="assets/gug-logo.jpg" alt="GUG" class="footer-logo" /><p>Jus naturels préparés avec soin à Liedekerke.</p></div>
-      <div><b>Commander</b><a href="tel:+32470923114">0470 923 114</a><a href="mailto:grasienguangu@gmail.com" class="contact-email"><strong>grasienguangu@gmail.com</strong></a><a href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp</a></div>
-      <div><b>Livraison</b><span>Gratuite dès 20 € sur les points indiqués</span><span>Commande minimum 3 jours à l’avance</span></div>
-      <div><b>Réseaux</b><span>Grace Nguangu</span><span>Facebook • Instagram • WhatsApp</span></div>
-    </div>
-    <div class="copyright">© 2026 GUG • Le meilleur de la nature dans chaque gorgée.</div>
-    <div class="powered-by">Site propulsé par <a href="https://ny-organization.be/home" target="_blank" rel="noopener">NY O</a></div>
-  </footer>
-
-  <button class="floating-cart" id="floatingCart" type="button" hidden>
-    <span><b id="floatingQty">0</b> <span id="floatingItemLabel">article</span></span>
-    <strong id="floatingTotal">0 €</strong>
-    <em>Voir ma commande →</em>
-  </button>
-
-  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Votre commande">
-    <div class="drawer-head">
-      <div><span class="eyebrow">VOTRE COMMANDE</span><h2>Panier GUG</h2></div>
-      <button class="close" id="closeDrawer" type="button" aria-label="Fermer">×</button>
-    </div>
-
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-empty" id="cartEmpty">Votre panier est vide. Ajoutez une bouteille pour commencer.</div>
-
-    <div class="cart-total" id="cartTotalBlock" hidden>
-      <span>Total produits</span><strong id="drawerTotal">0 €</strong>
-      <small id="deliveryRule">Les éventuels frais de transport sont confirmés avec vous avant validation.</small>
-    </div>
-
-    <form id="orderForm" hidden>
-      <div class="form-title"><span>Coordonnées</span><small>* champs obligatoires</small></div>
-      <label>Nom et prénom *<input type="text" id="customerName" required placeholder="Votre nom" autocomplete="name" /></label>
-      <label>Téléphone *<input type="tel" id="customerPhone" required placeholder="04…" autocomplete="tel" /></label>
-
-      <fieldset>
-        <legend>Mode de réception *</legend>
-        <label class="radio-card"><input type="radio" name="delivery" value="Livraison" checked /><span><b>Livraison / point de remise</b><small>Choisissez votre destination ci-dessous</small></span></label>
-        <label class="radio-card"><input type="radio" name="delivery" value="Retrait à Liedekerke" /><span><b>Retrait</b><small>Retrait à Liedekerke</small></span></label>
-      </fieldset>
-
-      <div id="deliveryFields">
-        <label>Destination *
-          <select id="deliveryDestination" required>
-            <option value="">Choisir une destination</option>
-            <option value="Bruxelles-Midi">Bruxelles-Midi</option>
-            <option value="Bruxelles-Central">Bruxelles-Central</option>
-            <option value="Liedekerke">Liedekerke</option>
-            <option value="Station Denderleeuw">Station Denderleeuw</option>
-            <option value="Autre destination">Autre destination</option>
-          </select>
-        </label>
-        <div class="delivery-notice" id="deliveryNotice">
+<header class="topbar">
+<a aria-label="GUG accueil" class="brand" href="#top">
+<img alt="Logo GUG" class="moving-gug-logo" src="assets/gug-logo.jpg"/>
+</a>
+<nav>
+<a href="#gamme">Notre gamme</a>
+<a href="#produits">Nos formats</a>
+<a href="#livraison">Livraison</a>
+<a href="#contact">Contact</a>
+</nav>
+<div aria-label="Choisir la langue" class="language-switch">
+<a class="active" href="index.html" hreflang="fr" lang="fr">FR</a>
+<a href="en.html" hreflang="en" lang="en">EN</a>
+<a href="nl.html" hreflang="nl" lang="nl">NL</a>
+</div>
+<button aria-label="Ouvrir le panier" class="cart-mini" id="cartMini" type="button">
+<span>Panier</span><b id="cartCount">0</b>
+</button>
+</header>
+<main id="top">
+<section class="hero section-shell">
+<div class="hero-copy">
+<span class="eyebrow">JUS NATURELS • ENERGY SHOTS • FAIT À LIEDEKERKE</span>
+<h1>Du fruit. Du gingembre. <em>Du caractère.</em></h1>
+<p>Découvrez notre gamme de jus naturels à base de gingembre, fruits et curcuma ainsi que nos Energy Shots. Des préparations fraîches, pleines de goût et réalisées avec soin.</p>
+<div class="hero-actions">
+<a class="btn primary" href="#produits">Commander maintenant</a>
+<a class="btn ghost" href="https://wa.me/32470923114" rel="noopener" target="_blank">WhatsApp</a>
+</div>
+<div class="trust-row">
+<span>Gingembre • Fruits • Curcuma</span><i></i><span>Energy Shots</span><i></i><span>Commande ≥ 3 jours à l’avance</span>
+</div>
+</div>
+<div class="hero-visual">
+<span class="sunburst"></span>
+<img alt="Bouteilles de jus naturels GUG avec fruits" src="assets/gug-hero.jpg"/>
+<div class="price-pill"><small>à partir de</small><strong>2 €</strong></div>
+<div class="fresh-pill">Frais • Sain • Délicieux</div>
+</div>
+</section>
+<section aria-label="Atouts GUG" class="ticker">
+<div>GINGEMBRE</div><span>✦</span><div>ORANGE</div><span>✦</span><div>POMME</div><span>✦</span><div>ANANAS</div><span>✦</span><div>CURCUMA</div><span>✦</span><div>ENERGY SHOTS</div>
+</section>
+<section aria-label="Information importante" class="order-alert section-shell">
+<div class="order-alert-icon">!</div>
+<div>
+<span class="eyebrow">IMPORTANT AVANT DE COMMANDER</span>
+<h2>Prévoyez votre commande au minimum 3 jours à l’avance.</h2>
+<p>Toute commande doit être passée au moins <strong>3 jours avant</strong> la date souhaitée de livraison ou de retrait.</p>
+</div>
+<a class="btn primary" href="https://wa.me/32470923114" rel="noopener" target="_blank">WhatsApp : 0470 923 114</a>
+</section>
+<section class="range section-shell" id="gamme">
+<div class="section-head">
+<div>
+<span class="eyebrow">DÉCOUVREZ LA GAMME GUG</span>
+<h2>Plusieurs goûts, plusieurs façons de profiter de GUG.</h2>
+</div>
+<p>Choisissez votre format ci-dessous et précisez vos goûts ou votre assortiment au moment de la commande.</p>
+</div>
+<div class="range-grid">
+<article class="range-card">
+<span class="range-number">01</span>
+<h3>Gingembre &amp; fruits</h3>
+<p>Des associations fruitées autour du gingembre, notamment orange, ananas et pomme.</p>
+<div class="range-tags"><span>Gingembre</span><span>Orange</span><span>Ananas</span><span>Pomme</span></div>
+</article>
+<article class="range-card range-card-dark">
+<span class="range-number">02</span>
+<h3>Gingembre &amp; curcuma</h3>
+<p>Une recette au profil plus épicé, avec la signature du gingembre et du curcuma.</p>
+<div class="range-tags"><span>Gingembre</span><span>Curcuma</span></div>
+</article>
+<article class="range-card range-card-shot">
+<span class="range-number">03</span>
+<h3>Energy Shots</h3>
+<p>Un petit format concentré et pratique, pensé pour les amateurs de saveurs intenses.</p>
+<div class="range-tags"><span>Shot</span><span>Format pratique</span></div>
+</article>
+</div>
+</section>
+<section class="products section-shell" id="produits">
+<div class="section-head">
+<div>
+<span class="eyebrow">CHOISISSEZ VOTRE FORMAT</span>
+<h2>Simple, frais, prêt à commander.</h2>
+</div>
+<p>Ajoutez vos bouteilles. Le total se calcule automatiquement, puis précisez les goûts souhaités dans le formulaire.</p>
+</div>
+<div class="product-grid">
+<article class="product-card" data-product="1l">
+<div class="product-image"><img alt="Jus GUG bouteille 1 litre" src="assets/gug-1l.jpg"/></div>
+<div class="product-info">
+<div><span class="size">1 LITRE</span><h3>Format famille</h3></div>
+<strong class="price">8 €</strong>
+</div>
+<p>Idéal à partager à la maison ou pour plusieurs portions.</p>
+<div aria-label="Quantité 1 litre" class="qty-control">
+<button class="qty-btn minus" data-id="1l" type="button">−</button>
+<span class="qty" id="qty-1l">0</span>
+<button class="qty-btn plus" data-id="1l" type="button">+</button>
+</div>
+</article>
+<article class="product-card featured" data-product="500ml">
+<span class="badge">POPULAIRE</span>
+<div class="product-image"><img alt="Jus GUG bouteille 500 millilitres" src="assets/gug-500ml.jpg"/></div>
+<div class="product-info">
+<div><span class="size">500 ML</span><h3>Format plaisir</h3></div>
+<strong class="price">4 €</strong>
+</div>
+<p>Le bon format pour une pause fraîcheur ou votre journée.</p>
+<div aria-label="Quantité 500 millilitres" class="qty-control">
+<button class="qty-btn minus" data-id="500ml" type="button">−</button>
+<span class="qty" id="qty-500ml">0</span>
+<button class="qty-btn plus" data-id="500ml" type="button">+</button>
+</div>
+</article>
+<article class="product-card" data-product="250ml">
+<div class="product-image"><img alt="Jus GUG bouteille 250 millilitres" src="assets/gug-250ml.jpg"/></div>
+<div class="product-info">
+<div><span class="size">250 ML</span><h3>Format découverte</h3></div>
+<strong class="price">2 €</strong>
+</div>
+<p>Petit format pratique pour découvrir GUG ou l'emporter partout.</p>
+<div aria-label="Quantité 250 millilitres" class="qty-control">
+<button class="qty-btn minus" data-id="250ml" type="button">−</button>
+<span class="qty" id="qty-250ml">0</span>
+<button class="qty-btn plus" data-id="250ml" type="button">+</button>
+</div>
+</article>
+</div>
+</section>
+<section class="nature section-shell" id="naturel">
+<div class="nature-card">
+<div class="nature-image"><img alt="Gingembre, orange, pomme et ananas" src="assets/gug-ingredients.jpg"/></div>
+<div class="nature-copy">
+<span class="eyebrow light">LE GOÛT DU NATUREL</span>
+<h2>Quatre ingrédients. Une recette pleine de fraîcheur.</h2>
+<div class="benefit-grid">
+<div><b>Gingembre</b><span>Une note vive et pleine de caractère.</span></div>
+<div><b>Orange</b><span>Fraîcheur fruitée et douceur naturelle.</span></div>
+<div><b>Pomme</b><span>Une rondeur douce pour équilibrer la recette.</span></div>
+<div><b>Ananas</b><span>Une touche tropicale et généreuse.</span></div>
+</div>
+<div class="clean-labels"><span>Sans conservateur</span><span>Sans sucre ajouté</span><span>Préparé avec soin</span></div>
+</div>
+</div>
+</section>
+<section class="logistics section-shell" id="livraison">
+<div class="section-head">
+<div>
+<span class="eyebrow">LIVRAISON &amp; PAIEMENT</span>
+<h2>Des règles simples, affichées avant confirmation.</h2>
+</div>
+<p>Le total affiché dans le panier correspond aux produits. Les frais de transport éventuels sont communiqués avant confirmation.</p>
+</div>
+<div class="logistics-grid">
+<article class="logistics-card free">
+<span class="logistics-kicker">LIVRAISON SANS FRAIS SUPPLÉMENTAIRES</span>
+<h3>À partir de 20 € de commande</h3>
+<ul>
+<li>Bruxelles-Midi</li>
+<li>Bruxelles-Central</li>
+<li>Liedekerke</li>
+<li>Station Denderleeuw</li>
+</ul>
+</article>
+<article class="logistics-card">
+<span class="logistics-kicker">AUTRES DESTINATIONS</span>
+<h3>Frais de transport obligatoires</h3>
+<p>Pour toute autre destination, les frais de transport sont calculés et communiqués avant la confirmation définitive de la commande.</p>
+</article>
+<article class="logistics-card">
+<span class="logistics-kicker">PAIEMENT</span>
+<h3>Cash ou virement</h3>
+<p>Choisissez votre mode de paiement dans le formulaire. Aucun paiement en ligne n’est demandé sur cette page.</p>
+</article>
+</div>
+</section>
+<section class="how section-shell">
+<div class="section-head compact"><div><span class="eyebrow">COMMENT ÇA MARCHE ?</span><h2>Votre commande en moins d'une minute.</h2></div></div>
+<div class="steps">
+<div><span>01</span><b>Choisissez</b><p>Sélectionnez vos formats, quantités et goûts souhaités.</p></div>
+<div><span>02</span><b>Planifiez</b><p>Choisissez une date au minimum 3 jours à l’avance.</p></div>
+<div><span>03</span><b>Envoyez</b><p>Votre commande est préparée dans WhatsApp en un clic.</p></div>
+<div><span>04</span><b>Confirmez</b><p>GUG confirme disponibilité, livraison et frais éventuels.</p></div>
+</div>
+</section>
+</main>
+<footer id="contact">
+<div class="footer-inner section-shell">
+<div><img alt="GUG" class="footer-logo" src="assets/gug-logo.jpg"/><p>Jus naturels préparés avec soin à Liedekerke.</p></div>
+<div><b>Commander</b><a href="tel:+32470923114">0470 923 114</a><a class="contact-email" href="mailto:grasienguangu@gmail.com"><strong>grasienguangu@gmail.com</strong></a><a href="https://wa.me/32470923114" rel="noopener" target="_blank">WhatsApp</a></div>
+<div><b>Livraison</b><span>Gratuite dès 20 € sur les points indiqués</span><span>Commande minimum 3 jours à l’avance</span></div>
+<div><b>Réseaux</b><span>Grace Nguangu</span><span>Facebook • Instagram • WhatsApp</span></div>
+</div>
+<div class="copyright">© 2026 GUG • Le meilleur de la nature dans chaque gorgée.</div>
+<div class="powered-by"><a class="ny-powered-link" href="https://ny-organization.be/home" rel="noopener" target="_blank"><img alt="NY Organization" class="ny-powered-logo" src="assets/ny-organization-logo.png"/><span>Site propulsé par <strong>NY O</strong></span></a></div>
+</footer>
+<button class="floating-cart" hidden="" id="floatingCart" type="button">
+<span><b id="floatingQty">0</b> <span id="floatingItemLabel">article</span></span>
+<strong id="floatingTotal">0 €</strong>
+<em>Voir ma commande →</em>
+</button>
+<div class="drawer-backdrop" hidden="" id="drawerBackdrop"></div>
+<aside aria-hidden="true" aria-label="Votre commande" class="cart-drawer" id="cartDrawer">
+<div class="drawer-head">
+<div><span class="eyebrow">VOTRE COMMANDE</span><h2>Panier GUG</h2></div>
+<button aria-label="Fermer" class="close" id="closeDrawer" type="button">×</button>
+</div>
+<div class="cart-items" id="cartItems"></div>
+<div class="cart-empty" id="cartEmpty">Votre panier est vide. Ajoutez une bouteille pour commencer.</div>
+<div class="cart-total" hidden="" id="cartTotalBlock">
+<span>Total produits</span><strong id="drawerTotal">0 €</strong>
+<small id="deliveryRule">Les éventuels frais de transport sont confirmés avec vous avant validation.</small>
+</div>
+<form hidden="" id="orderForm">
+<div class="form-title"><span>Coordonnées</span><small>* champs obligatoires</small></div>
+<label>Nom et prénom *<input autocomplete="name" id="customerName" placeholder="Votre nom" required="" type="text"/></label>
+<label>Téléphone *<input autocomplete="tel" id="customerPhone" placeholder="04…" required="" type="tel"/></label>
+<fieldset>
+<legend>Mode de réception *</legend>
+<label class="radio-card"><input checked="" name="delivery" type="radio" value="Livraison"/><span><b>Livraison / point de remise</b><small>Choisissez votre destination ci-dessous</small></span></label>
+<label class="radio-card"><input name="delivery" type="radio" value="Retrait à Liedekerke"/><span><b>Retrait</b><small>Retrait à Liedekerke</small></span></label>
+</fieldset>
+<div id="deliveryFields">
+<label>Destination *
+          <select id="deliveryDestination" required="">
+<option value="">Choisir une destination</option>
+<option value="Bruxelles-Midi">Bruxelles-Midi</option>
+<option value="Bruxelles-Central">Bruxelles-Central</option>
+<option value="Liedekerke">Liedekerke</option>
+<option value="Station Denderleeuw">Station Denderleeuw</option>
+<option value="Autre destination">Autre destination</option>
+</select>
+</label>
+<div class="delivery-notice" id="deliveryNotice">
           Livraison sans frais supplémentaires sur les points indiqués pour toute commande à partir de 20 €.
         </div>
-      </div>
-
-      <div id="addressFields" hidden>
-        <label>Adresse / destination exacte *<input type="text" id="address" placeholder="Rue, numéro ou lieu de rendez-vous" autocomplete="street-address" /></label>
-        <div class="two-cols">
-          <label>Code postal<input type="text" id="postalCode" placeholder="1000" autocomplete="postal-code" /></label>
-          <label>Ville<input type="text" id="city" placeholder="Ville" autocomplete="address-level2" /></label>
-        </div>
-      </div>
-
-      <fieldset>
-        <legend>Mode de paiement *</legend>
-        <label class="radio-card"><input type="radio" name="payment" value="Cash" checked /><span><b>Cash</b><small>Paiement en espèces selon les modalités convenues</small></span></label>
-        <label class="radio-card"><input type="radio" name="payment" value="Virement bancaire" /><span><b>Virement bancaire</b><small>Les coordonnées de paiement sont communiquées lors de la confirmation</small></span></label>
-      </fieldset>
-
-      <label>Date souhaitée *<input type="date" id="deliveryDate" required /></label>
-      <div class="advance-notice"><b>Minimum 3 jours à l’avance.</b> Le calendrier bloque automatiquement les dates trop proches.</div>
-
-      <label>Goûts / composition souhaités<textarea id="flavors" rows="3" placeholder="Ex. gingembre-ananas, gingembre-orange, curcuma, Energy Shots, assortiment…"></textarea></label>
-      <label>Note / précision<textarea id="note" rows="3" placeholder="Ex. heure préférée, précision de rendez-vous, instructions…"></textarea></label>
-
-      <fieldset class="safety-box">
-        <legend>Précautions avant commande *</legend>
-        <p class="safety-intro">Avant de finaliser, vérifiez qu’aucune des situations suivantes ne vous concerne :</p>
-        <ul>
-          <li>Allergie ou intolérance à l’un des ingrédients</li>
-          <li>Prise régulière de médicaments nécessitant une vérification de compatibilité</li>
-          <li>Traitement anticoagulant ou affectant la coagulation</li>
-          <li>Grossesse ou allaitement — souhait de demander conseil</li>
-          <li>Sensibilité ou problème digestif nécessitant des précautions</li>
-          <li>Autre situation particulière</li>
-        </ul>
-        <label class="check-card">
-          <input type="checkbox" id="safetyConfirm" required />
-          <span><b>Aucune de ces situations</b><small>Je confirme qu’aucune des situations ci-dessus ne me concerne.</small></span>
-        </label>
-        <p class="safety-help">Si une situation vous concerne, ne cochez pas cette case et contactez GUG sur WhatsApp avant de commander.</p>
-      </fieldset>
-
-      <button class="btn primary full" type="submit">Envoyer ma commande sur WhatsApp</button>
-      <p class="form-note">Aucun paiement n'est demandé sur cette page. GUG confirme la disponibilité, les modalités de remise et les éventuels frais de transport via WhatsApp.</p>
-    </form>
-  </aside>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
+</div>
+<div hidden="" id="addressFields">
+<label>Adresse / destination exacte *<input autocomplete="street-address" id="address" placeholder="Rue, numéro ou lieu de rendez-vous" type="text"/></label>
+<div class="two-cols">
+<label>Code postal<input autocomplete="postal-code" id="postalCode" placeholder="1000" type="text"/></label>
+<label>Ville<input autocomplete="address-level2" id="city" placeholder="Ville" type="text"/></label>
+</div>
+</div>
+<fieldset>
+<legend>Mode de paiement *</legend>
+<label class="radio-card"><input checked="" name="payment" type="radio" value="Cash"/><span><b>Cash</b><small>Paiement en espèces selon les modalités convenues</small></span></label>
+<label class="radio-card"><input name="payment" type="radio" value="Virement bancaire"/><span><b>Virement bancaire</b><small>Les coordonnées de paiement sont communiquées lors de la confirmation</small></span></label>
+</fieldset>
+<label>Date souhaitée *<input id="deliveryDate" required="" type="date"/></label>
+<div class="advance-notice"><b>Minimum 3 jours à l’avance.</b> Le calendrier bloque automatiquement les dates trop proches.</div>
+<label>Goûts / composition souhaités<textarea id="flavors" placeholder="Ex. gingembre-ananas, gingembre-orange, curcuma, Energy Shots, assortiment…" rows="3"></textarea></label>
+<label>Note / précision<textarea id="note" placeholder="Ex. heure préférée, précision de rendez-vous, instructions…" rows="3"></textarea></label>
+<fieldset class="safety-box">
+<legend>Précautions avant commande *</legend>
+<p class="safety-intro">Avant de finaliser, vérifiez qu’aucune des situations suivantes ne vous concerne :</p>
+<ul>
+<li>Allergie ou intolérance à l’un des ingrédients</li>
+<li>Prise régulière de médicaments nécessitant une vérification de compatibilité</li>
+<li>Traitement anticoagulant ou affectant la coagulation</li>
+<li>Grossesse ou allaitement — souhait de demander conseil</li>
+<li>Sensibilité ou problème digestif nécessitant des précautions</li>
+<li>Autre situation particulière</li>
+</ul>
+<label class="check-card">
+<input id="safetyConfirm" required="" type="checkbox"/>
+<span><b>Aucune de ces situations</b><small>Je confirme qu’aucune des situations ci-dessus ne me concerne.</small></span>
+</label>
+<p class="safety-help">Si une situation vous concerne, ne cochez pas cette case et contactez GUG sur WhatsApp avant de commander.</p>
+</fieldset>
+<button class="btn primary full" type="submit">Envoyer ma commande sur WhatsApp</button>
+<p class="form-note">Aucun paiement n'est demandé sur cette page. GUG confirme la disponibilité, les modalités de remise et les éventuels frais de transport via WhatsApp.</p>
+</form>
+</aside>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
 </body>
 </html>

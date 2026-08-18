@@ -50,3 +50,10 @@ Puis :
 4. Framework Preset : Other.
 5. Aucune commande de build.
 6. Deploy.
+
+
+## V4 — Branding
+- Logo GUG animé subtilement dans l'en-tête.
+- Favicon GUG pour navigateur / mobile.
+- Logo officiel NY Organization en miniature dans le pied de page.
+- Mention « Site propulsé par NY O » rendue plus visible.
