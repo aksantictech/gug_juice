@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#174d2a" />
+  <meta name="description" content="Commandez vos jus naturels GUG : gingembre, orange, pomme et ananas. Livraison sur commande à Liedekerke." />
+  <title>GUG — Jus naturels | Commande en ligne</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="GUG accueil">
+      <img src="assets/gug-logo.jpg" alt="Logo GUG" />
+    </a>
+    <nav>
+      <a href="#produits">Nos formats</a>
+      <a href="#naturel">Le naturel</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-mini" id="cartMini" type="button" aria-label="Ouvrir le panier">
+      <span>Panier</span><b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <span class="eyebrow">JUS NATURELS • FAIT À LIEDEKERKE</span>
+        <h1>Du fruit. Du gingembre. <em>Du caractère.</em></h1>
+        <p>Une boisson fraîche préparée avec gingembre, orange, pomme et ananas. Sans conservateur, sans sucre ajouté.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#produits">Commander maintenant</a>
+          <a class="btn ghost" href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="trust-row">
+          <span>100% naturel</span><i></i><span>Dès 2 €</span><i></i><span>Livraison sur commande</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="sunburst"></span>
+        <img src="assets/gug-hero.jpg" alt="Bouteilles de jus naturels GUG avec fruits" />
+        <div class="price-pill"><small>à partir de</small><strong>2 €</strong></div>
+        <div class="fresh-pill">Frais • Sain • Délicieux</div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Atouts GUG">
+      <div>GINGEMBRE</div><span>✦</span><div>ORANGE</div><span>✦</span><div>POMME</div><span>✦</span><div>ANANAS</div><span>✦</span><div>100% NATUREL</div>
+    </section>
+
+    <section class="products section-shell" id="produits">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">CHOISISSEZ VOTRE FORMAT</span>
+          <h2>Simple, frais, prêt à commander.</h2>
+        </div>
+        <p>Ajoutez vos bouteilles. Le total se calcule automatiquement.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card" data-product="1l">
+          <div class="product-image"><img src="assets/gug-1l.jpg" alt="Jus GUG bouteille 1 litre" /></div>
+          <div class="product-info">
+            <div><span class="size">1 LITRE</span><h3>Format famille</h3></div>
+            <strong class="price">8 €</strong>
+          </div>
+          <p>Idéal à partager à la maison ou pour plusieurs portions.</p>
+          <div class="qty-control" aria-label="Quantité 1 litre">
+            <button class="qty-btn minus" type="button" data-id="1l">−</button>
+            <span class="qty" id="qty-1l">0</span>
+            <button class="qty-btn plus" type="button" data-id="1l">+</button>
+          </div>
+        </article>
+
+        <article class="product-card featured" data-product="500ml">
+          <span class="badge">POPULAIRE</span>
+          <div class="product-image"><img src="assets/gug-500ml.jpg" alt="Jus GUG bouteille 500 millilitres" /></div>
+          <div class="product-info">
+            <div><span class="size">500 ML</span><h3>Format plaisir</h3></div>
+            <strong class="price">4 €</strong>
+          </div>
+          <p>Le bon format pour une pause fraîcheur ou votre journée.</p>
+          <div class="qty-control" aria-label="Quantité 500 millilitres">
+            <button class="qty-btn minus" type="button" data-id="500ml">−</button>
+            <span class="qty" id="qty-500ml">0</span>
+            <button class="qty-btn plus" type="button" data-id="500ml">+</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="250ml">
+          <div class="product-image"><img src="assets/gug-250ml.jpg" alt="Jus GUG bouteille 250 millilitres" /></div>
+          <div class="product-info">
+            <div><span class="size">250 ML</span><h3>Format découverte</h3></div>
+            <strong class="price">2 €</strong>
+          </div>
+          <p>Petit format pratique pour découvrir GUG ou l'emporter partout.</p>
+          <div class="qty-control" aria-label="Quantité 250 millilitres">
+            <button class="qty-btn minus" type="button" data-id="250ml">−</button>
+            <span class="qty" id="qty-250ml">0</span>
+            <button class="qty-btn plus" type="button" data-id="250ml">+</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="nature section-shell" id="naturel">
+      <div class="nature-card">
+        <div class="nature-image"><img src="assets/gug-ingredients.jpg" alt="Gingembre, orange, pomme et ananas" /></div>
+        <div class="nature-copy">
+          <span class="eyebrow light">LE GOÛT DU NATUREL</span>
+          <h2>Quatre ingrédients. Une recette pleine de fraîcheur.</h2>
+          <div class="benefit-grid">
+            <div><b>Gingembre</b><span>Une note vive et pleine de caractère.</span></div>
+            <div><b>Orange</b><span>Fraîcheur fruitée et douceur naturelle.</span></div>
+            <div><b>Pomme</b><span>Une rondeur douce pour équilibrer la recette.</span></div>
+            <div><b>Ananas</b><span>Une touche tropicale et généreuse.</span></div>
+          </div>
+          <div class="clean-labels"><span>Sans conservateur</span><span>Sans sucre ajouté</span><span>Préparé avec soin</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section-shell">
+      <div class="section-head compact"><div><span class="eyebrow">COMMENT ÇA MARCHE ?</span><h2>Votre commande en moins d'une minute.</h2></div></div>
+      <div class="steps">
+        <div><span>01</span><b>Choisissez</b><p>Sélectionnez vos formats et quantités.</p></div>
+        <div><span>02</span><b>Renseignez</b><p>Ajoutez vos coordonnées et votre mode de réception.</p></div>
+        <div><span>03</span><b>Envoyez</b><p>Votre commande est préparée dans WhatsApp en un clic.</p></div>
+        <div><span>04</span><b>Confirmez</b><p>Nous validons avec vous la livraison ou le retrait.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner section-shell">
+      <div><img src="assets/gug-logo.jpg" alt="GUG" class="footer-logo" /><p>Jus naturels préparés avec soin à Liedekerke.</p></div>
+      <div><b>Commander</b><a href="tel:+32470923114">0470 92 31 14</a><a href="https://wa.me/32470923114" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div><b>Réception</b><span>Livraison sur commande</span><span>Retrait à Liedekerke</span></div>
+      <div><b>Réseaux</b><span>Grace Nguangu</span><span>Facebook • Instagram • WhatsApp</span></div>
+    </div>
+    <div class="copyright">© 2026 GUG • Le meilleur de la nature dans chaque gorgée.</div>
+  </footer>
+
+  <button class="floating-cart" id="floatingCart" type="button" hidden>
+    <span><b id="floatingQty">0</b> article<span id="plural">s</span></span>
+    <strong id="floatingTotal">0 €</strong>
+    <em>Voir ma commande →</em>
+  </button>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Votre commande">
+    <div class="drawer-head">
+      <div><span class="eyebrow">VOTRE COMMANDE</span><h2>Panier GUG</h2></div>
+      <button class="close" id="closeDrawer" type="button" aria-label="Fermer">×</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-empty" id="cartEmpty">Votre panier est vide. Ajoutez une bouteille pour commencer.</div>
+
+    <div class="cart-total" id="cartTotalBlock" hidden>
+      <span>Total produits</span><strong id="drawerTotal">0 €</strong>
+      <small>Les éventuels frais de livraison sont confirmés avec vous avant livraison.</small>
+    </div>
+
+    <form id="orderForm" hidden>
+      <div class="form-title"><span>Coordonnées</span><small>* champs obligatoires</small></div>
+      <label>Nom et prénom *<input type="text" id="customerName" required placeholder="Votre nom" autocomplete="name" /></label>
+      <label>Téléphone *<input type="tel" id="customerPhone" required placeholder="04…" autocomplete="tel" /></label>
+
+      <fieldset>
+        <legend>Mode de réception *</legend>
+        <label class="radio-card"><input type="radio" name="delivery" value="Livraison" checked /><span><b>Livraison</b><small>À l'adresse de votre choix</small></span></label>
+        <label class="radio-card"><input type="radio" name="delivery" value="Retrait à Liedekerke" /><span><b>Retrait</b><small>À Liedekerke</small></span></label>
+      </fieldset>
+
+      <div id="addressFields">
+        <label>Adresse de livraison *<input type="text" id="address" placeholder="Rue et numéro" autocomplete="street-address" /></label>
+        <div class="two-cols">
+          <label>Code postal<input type="text" id="postalCode" placeholder="1770" autocomplete="postal-code" /></label>
+          <label>Ville<input type="text" id="city" placeholder="Liedekerke" autocomplete="address-level2" /></label>
+        </div>
+      </div>
+
+      <label>Date souhaitée<input type="date" id="deliveryDate" /></label>
+      <label>Note / précision<textarea id="note" rows="3" placeholder="Ex. sonner à l'entrée, horaire préféré…"></textarea></label>
+
+      <button class="btn primary full" type="submit">Envoyer ma commande sur WhatsApp</button>
+      <p class="form-note">Aucun paiement n'est demandé sur cette page. La commande est finalisée avec GUG via WhatsApp.</p>
+    </form>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
